@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>HMC INTERNATIONAL WHOLESALE LLC</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <style>
         body {
             margin: 0;
@@ -12,24 +11,20 @@
             background-color: #f4f6f8;
             color: #333;
         }
-
         header {
             background-color: #0b3c5d;
             color: #fff;
             padding: 30px;
             text-align: center;
         }
-
         section {
             padding: 40px;
             max-width: 1000px;
             margin: auto;
         }
-
         h2 {
             color: #0b3c5d;
         }
-
         .card {
             background: #fff;
             padding: 25px;
@@ -37,7 +32,6 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0,0,0,0.05);
         }
-
         footer {
             background-color: #0b3c5d;
             color: #fff;
@@ -45,26 +39,51 @@
             padding: 15px;
         }
 
-        /* WhatsApp Button */
-        .whatsapp-float {
+        /* WhatsApp Floating Button */
+        .whatsapp-button {
             position: fixed;
             bottom: 20px;
             right: 20px;
             background-color: #25D366;
-            color: white;
+            border-radius: 50px;
             width: 60px;
             height: 60px;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 30px;
-            line-height: 60px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-decoration: none;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        .whatsapp-button img {
+            width: 30px;
+            height: 30px;
+        }
+        .whatsapp-button span {
+            position: absolute;
+            right: 70px;
+            background-color: #25D366;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            opacity: 0;
+            white-space: nowrap;
+            pointer-events: none;
+            transition: opacity 0.3s, transform 0.3s;
+            transform: translateX(10px);
+        }
+        .whatsapp-button:hover span {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .whatsapp-button:hover {
+            transform: scale(1.1);
         }
     </style>
 </head>
-
 <body>
 
 <header>
@@ -77,14 +96,16 @@
         <h2>About Us</h2>
         <p>
             HMC INTERNATIONAL WHOLESALE LLC is a US-registered company operating in
-            general trading, consulting, and brokerage services.
+            general trading, consulting, and brokerage services. We provide professional
+            business solutions to international clients with full compliance to US regulations.
         </p>
     </div>
 
     <div class="card">
         <h2>Company Information</h2>
+        <p><strong>Company Name:</strong> HMC INTERNATIONAL WHOLESALE LLC</p>
         <p><strong>Address:</strong> 551 Golf Terrace, Union, NJ 07083, USA</p>
-        <p><strong>Country:</strong> United States</p>
+        <p><strong>Country:</strong> United States (New Jersey)</p>
         <p><strong>Currency:</strong> USD</p>
     </div>
 
@@ -97,17 +118,24 @@
             <li>International Facilitation Services</li>
         </ul>
     </div>
+
+    <div class="card">
+        <h2>Payments</h2>
+        <p>
+            We accept payments through secure payment links provided by our banking partners.
+            All transactions are processed in USD in full compliance with international standards.
+        </p>
+    </div>
 </section>
 
 <footer>
     © 2026 HMC INTERNATIONAL WHOLESALE LLC – All Rights Reserved
 </footer>
 
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/19083201233"
-   class="whatsapp-float"
-   target="_blank">
-   💬
+<!-- WhatsApp Button -->
+<a href="https://wa.me/19083201233" target="_blank" class="whatsapp-button">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    <span>Chat with us</span>
 </a>
 
 </body>
