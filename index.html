@@ -17,6 +17,10 @@
             padding: 30px;
             text-align: center;
         }
+        header img {
+            max-width: 170px;
+            margin-bottom: 15px;
+        }
         section {
             padding: 40px;
             max-width: 1000px;
@@ -82,11 +86,31 @@
         .whatsapp-button:hover {
             transform: scale(1.1);
         }
+
+        /* NEW: Contact Info Section Styling */
+        .contact-info {
+            margin-top: 20px;
+        }
+        .contact-info p {
+            font-size: 15px;
+            margin: 10px 0;
+        }
+        .contact-info span {
+            font-weight: bold;
+            margin-right: 6px;
+        }
+        .contact-info a {
+            color: #0a3d62;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
 
 <header>
+    <!-- NEW: Company Logo -->
+    <img src="assets/images/logo.png" alt="HMC INTERNATIONAL WHOLESALE LLC Logo">
+
     <h1>HMC INTERNATIONAL WHOLESALE LLC</h1>
     <p>General Trading • Consulting • Brokerage Services</p>
 </header>
@@ -104,9 +128,15 @@
     <div class="card">
         <h2>Company Information</h2>
         <p><strong>Company Name:</strong> HMC INTERNATIONAL WHOLESALE LLC</p>
-        <p><strong>Address:</strong> 551 Golf Terrace, Union, NJ 07083, USA</p>
+        <!-- NEW: Updated Address -->
+        <p><strong>Address:</strong> 24 INVERNESS TER, FORDS, NJ 08863, USA</p>
         <p><strong>Country:</strong> United States (New Jersey)</p>
-        <p><strong>Currency:</strong> USD</p>
+        <!-- NEW: Contact Information with Icons -->
+        <div class="contact-info">
+            <p><span>📍 Address:</span> 24 Inverness Ter, Fords, NJ, USA</p>
+            <p><span>📞 Phone:</span> <a href="tel:+19083201233">+1 908 320 1233</a></p>
+            <p><span>✉️ Email:</span> <a href="mailto:Hmc.llc@yahoo.com">Hmc.llc@yahoo.com</a></p>
+        </div>
     </div>
 
     <div class="card">
