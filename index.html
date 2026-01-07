@@ -3,44 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <title>HMC INTERNATIONAL WHOLESALE LLC</title>
+
+    <!-- SEO -->
+    <meta name="description" content="HMC INTERNATIONAL WHOLESALE LLC - General Trading, Consulting & Brokerage Services in the USA">
+    <meta name="keywords" content="HMC, Wholesale, Trading, Consulting, Brokerage, USA">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
+        :root {
+            --primary: #0b3c5d;
+            --secondary: #62620a;
+            --bg: #f4f6f8;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
-            background-color:  #f4f6f8;
+            background-color: var(--bg);
             color: #333;
-         }
+            line-height: 1.6;
+        }
+
         header {
-            background-color: #62620aba;
-            color: #0b3c5d;
-            padding: 30px;
+            background: linear-gradient(135deg, #62620aba, #d6d6a4);
             text-align: center;
+            padding: 40px 20px;
         }
+
         header img {
-            max-width: 350px;
-            margin-bottom: 10px;
+            max-width: 280px;
+            margin-bottom: 15px;
         }
+
+        header h1 {
+            margin: 10px 0 5px;
+            color: var(--primary);
+            font-size: 28px;
+        }
+
+        header p {
+            margin: 0;
+            color: #333;
+            font-size: 16px;
+        }
+
         section {
-            padding: 40px;
-            max-width: 1000px;
+            padding: 50px 20px;
+            max-width: 1100px;
             margin: auto;
         }
+
         h2 {
-            color: #0b3c5d;
+            color: var(--primary);
+            margin-bottom: 15px;
         }
+
         .card {
-            background: #fff;
-            padding: 25px;
-            margin-bottom: 25px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+            background: var(--white);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
         }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        /* Image Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
         footer {
             background-color: #62620aba;
-            color: #0b3c5d;
+            color: var(--primary);
             text-align: center;
-            padding: 15px;
+            padding: 20px;
+            font-size: 14px;
         }
 
         /* WhatsApp Floating Button */
@@ -49,89 +109,64 @@
             bottom: 20px;
             right: 20px;
             background-color: #25D366;
-            border-radius: 50px;
+            border-radius: 50%;
             width: 60px;
             height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            color: white;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
             z-index: 1000;
         }
+
         .whatsapp-button img {
             width: 30px;
             height: 30px;
         }
-        .whatsapp-button span {
-            position: absolute;
-            right: 70px;
-            background-color: #25D366;
-            color: white;
-            padding: 8px 12px;
-            border-radius: 20px;
-            font-size: 14px;
-            opacity: 0;
-            white-space: nowrap;
-            pointer-events: none;
-            transition: opacity 0.3s, transform 0.3s;
-            transform: translateX(10px);
-        }
-        .whatsapp-button:hover span {
-            opacity: 1;
-            transform: translateX(0);
-        }
+
         .whatsapp-button:hover {
             transform: scale(1.1);
         }
 
-        /* NEW: Contact Info Section Styling */
-        .contact-info {
-            margin-top: 20px;
-        }
-        .contact-info p {
-            font-size: 15px;
-            margin: 10px 0;
-        }
-        .contact-info span {
-            font-weight: bold;
-            margin-right: 6px;
-        }
-        .contact-info a {
-            color: #0a3d62;
-            text-decoration: none;
+        /* Responsive */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 22px;
+            }
+
+            section {
+                padding: 30px 15px;
+            }
         }
     </style>
 </head>
+
 <body>
 
 <header>
-    <!-- NEW: Company Logo -->
     <img src="logo.png" alt="HMC INTERNATIONAL WHOLESALE LLC Logo">
-
     <h1>HMC INTERNATIONAL WHOLESALE LLC</h1>
     <p>General Trading • Consulting • Brokerage Services</p>
 </header>
 
 <section>
+
     <div class="card">
         <h2>About Us</h2>
         <p>
-            HMC INTERNATIONAL WHOLESALE LLC is a US-registered company operating in
-            general trading, consulting, and brokerage services. We provide professional
+            HMC INTERNATIONAL WHOLESALE LLC is a US-registered company providing
+            general trading, consulting, and brokerage services. We deliver reliable
             business solutions to international clients with full compliance to US regulations.
         </p>
     </div>
+
     <div class="card">
         <h2>Company Information</h2>
         <p><strong>Company Name:</strong> HMC INTERNATIONAL WHOLESALE LLC</p>
-        <!-- NEW: Updated Address -->
-        <p><strong>Address:</strong> 24 INVERNESS TER, FORDS, NJ 08863, USA</p>
+        <p><strong>Address:</strong> 24 Inverness Ter, Fords, NJ 08863, USA</p>
         <p><strong>Country:</strong> United States (New Jersey)</p>
-        <!-- NEW: Contact Information with Icons -->
-        </div>
     </div>
 
     <div class="card">
@@ -144,30 +179,38 @@
         </ul>
     </div>
 
-   <div class="card">
+    <div class="card">
         <h2>Payments</h2>
         <p>
-            We accept payments through secure payment links provided by our banking partners.
-            All transactions are processed in USD in full compliance with international standards.
+            We accept payments via secure payment links provided by our banking partners.
+            All transactions are processed in USD in compliance with international standards.
         </p>
     </div>
-</section>
-<section>
+
+    <div class="card">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <img src="images/img1.jpg" alt="Business Image" loading="lazy">
+            <img src="images/img2.jpg" alt="Trading Services" loading="lazy">
+            <img src="images/img3.jpg" alt="Consulting Services" loading="lazy">
+        </div>
+    </div>
+
     <div class="card">
         <h2>Contact Us</h2>
-        <p><strong>📍Address:</strong> 24 Inverness Ter, Fords, NJ 08863, USA</p>
-        <p><strong>📞Phone:</strong> <a href="tel:+19083201233">+1 908 320 1233</a></p>
-        <p><strong>✉️Email:</strong> <a href="mailto:Hmc.llc@yahoo.com">Hmc.llc@yahoo.com</a></p>
+        <p><strong>📍 Address:</strong> 24 Inverness Ter, Fords, NJ 08863, USA</p>
+        <p><strong>📞 Phone:</strong> <a href="tel:+19083201233">+1 908 320 1233</a></p>
+        <p><strong>✉️ Email:</strong> <a href="mailto:Hmc.llc@yahoo.com">Hmc.llc@yahoo.com</a></p>
     </div>
+
 </section>
+
 <footer>
     © 2026 HMC INTERNATIONAL WHOLESALE LLC – All Rights Reserved
 </footer>
 
-<!-- WhatsApp Button -->
 <a href="https://wa.me/19083201233" target="_blank" class="whatsapp-button">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-    <span>Chat with us</span>
 </a>
 
 </body>
