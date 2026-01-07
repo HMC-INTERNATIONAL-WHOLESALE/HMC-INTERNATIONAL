@@ -1,43 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>HMC INTERNATIONAL WHOLESALE LLC</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
+        :root{
+          --brand:#0b3c5d;
+          --bg:#f4f6f8;
+          --text:#333;
+          --card:#fff;
+          --shadow:0 0 10px rgba(0,0,0,0.05);
+        }
+        /* Base */
+        * { box-sizing: border-box; }
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #f4f6f8;
-            color: #333;
-         }
-        header {
-            background-color: #0b3c5d;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+        }
+
+        /* Header */
+        header.site-header {
+            background-color: var(--brand);
             color: #fff;
-            padding: 30px;
+            padding: 28px 16px;
             text-align: center;
         }
-        header img {
-            max-width: 170px;
-            margin-bottom: 15px;
+        /* كتلة الهوية: اللوجو + العنوان */
+        .brand {
+            display: inline-flex;         /* يبقي العناصر في سطر واحد */
+            align-items: center;          /* توسيط عمودي */
+            gap: 14px;                    /* مسافة بين اللوجو والنص */
+            max-width: 100%;
         }
+        .brand picture,
+        .brand img {
+            display: block;               /* يمنع فراغ سطر الصورة */
+        }
+        /* تحجيم اللوجو بالارتفاع للحفاظ على النسبة */
+        .brand img {
+            height: 56px;                 /* اضبط حسب تصميمك */
+            width: auto;
+            object-fit: contain;          /* يمنع القص/التمدد */
+            image-rendering: -webkit-optimize-contrast;
+        }
+        /* العنوان والوصف */
+        .brand-text h1 {
+            margin: 0;
+            font-size: 22px;
+            letter-spacing: 0.3px;
+        }
+        .brand-text p {
+            margin: 4px 0 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Content */
         section {
-            padding: 40px;
+            padding: 40px 16px;
             max-width: 1000px;
             margin: auto;
         }
         h2 {
-            color: #0b3c5d;
+            color: var(--brand);
+            margin-top: 0;
         }
         .card {
-            background: #fff;
+            background: var(--card);
             padding: 25px;
             margin-bottom: 25px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+            box-shadow: var(--shadow);
         }
+
+        /* Footer */
         footer {
-            background-color: #0b3c5d;
+            background-color: var(--brand);
             color: #fff;
             text-align: center;
             padding: 15px;
@@ -87,32 +129,44 @@
             transform: scale(1.1);
         }
 
-        /* NEW: Contact Info Section Styling */
-        .contact-info {
-            margin-top: 20px;
+        /* Contact Info (احتفظت بها لو هتستخدمها) */
+        .contact-info { margin-top: 20px; }
+        .contact-info p { font-size: 15px; margin: 10px 0; }
+        .contact-info span { font-weight: bold; margin-right: 6px; }
+        .contact-info a { color: #0a3d62; text-decoration: none; }
+
+        /* Responsive tweaks */
+        @media (max-width: 768px) {
+          .brand img { height: 48px; }
+          .brand-text h1 { font-size: 20px; }
+          .brand-text p { font-size: 13px; }
         }
-        .contact-info p {
-            font-size: 15px;
-            margin: 10px 0;
-        }
-        .contact-info span {
-            font-weight: bold;
-            margin-right: 6px;
-        }
-        .contact-info a {
-            color: #0a3d62;
-            text-decoration: none;
+        @media (max-width: 480px) {
+          .brand {
+            flex-direction: column;    /* اللوجو فوق والنص تحت على الشاشات الصغيرة */
+            gap: 10px;
+          }
+          .brand img { height: 42px; }
+          .brand-text h1 { font-size: 18px; }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <!-- NEW: Company Logo -->
-    <img src="logo.png" alt="HMC INTERNATIONAL WHOLESALE LLC Logo">
-
-    <h1>HMC INTERNATIONAL WHOLESALE LLC</h1>
-    <p>General Trading • Consulting • Brokerage Services</p>
+<header class="site-header">
+    <!-- الهوية: لوجو + نص -->
+    <div class="brand">
+        <!-- استخدم srcset لنسخة ريتنا إن متاحة -->
+        <!-- وفّر ملف logo@2x.png بنفس الأبعاد الفيزيائية مضروبة ×2 -->
+        <picture>
+            <source srcset="logo.png 1x, logo@2x.png 2x" type="image/png" />
+            <img src="logo.png" alt="HMC INTERNATIONAL WHOLESALE LLC" width="240" height="80" />
+        </picture>
+        <div class="brand-text">
+            <h1>HMC INTERNATIONAL WHOLESALE LLC</h1>
+            <p>General Trading • Consulting • Brokerage Services</p>
+        </div>
+    </div>
 </header>
 
 <section>
@@ -128,11 +182,8 @@
     <div class="card">
         <h2>Company Information</h2>
         <p><strong>Company Name:</strong> HMC INTERNATIONAL WHOLESALE LLC</p>
-        <!-- NEW: Updated Address -->
         <p><strong>Address:</strong> 24 INVERNESS TER, FORDS, NJ 08863, USA</p>
         <p><strong>Country:</strong> United States (New Jersey)</p>
-        <!-- NEW: Contact Information with Icons -->
-        </div>
     </div>
 
     <div class="card">
@@ -145,7 +196,7 @@
         </ul>
     </div>
 
-   <div class="card">
+    <div class="card">
         <h2>Payments</h2>
         <p>
             We accept payments through secure payment links provided by our banking partners.
@@ -153,6 +204,7 @@
         </p>
     </div>
 </section>
+
 <section>
     <div class="card">
         <h2>Contact Us</h2>
@@ -161,13 +213,14 @@
         <p><strong>✉️Email:</strong> <a href="mailto:Hmc.llc@yahoo.com">Hmc.llc@yahoo.com</a></p>
     </div>
 </section>
+
 <footer>
     © 2026 HMC INTERNATIONAL WHOLESALE LLC – All Rights Reserved
 </footer>
 
 <!-- WhatsApp Button -->
-<a href="https://wa.me/19083201233" target="_blank" class="whatsapp-button">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+<a href="https://wa.me/19083201233" target="_blank" class="whatsapp-button" aria-label="Chat with us on WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" aria-hidden="true" />
     <span>Chat with us</span>
 </a>
 
