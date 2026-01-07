@@ -14,7 +14,14 @@
             --primary: #0b3c5d;
             --secondary: #62620a;
             --bg: #f4f6f8;
-            --white: #ffffff;
+            --card: #ffffff;
+            --text: #333;
+        }
+
+        body.dark {
+            --bg: #121212;
+            --card: #1e1e1e;
+            --text: #eaeaea;
         }
 
         * {
@@ -24,22 +31,9 @@
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
-            background-color: var(--bg);
-            color: #333;
-            line-height: 1.6;
-            <button id="darkToggle" class="toggle">🌙 Dark Mode</button>
-
-<header>
-  <img src="logo.png">
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-
-<script src="script.js"></script>
-
+            background: var(--bg);
+            color: var(--text);
+            transition: 0.3s;
         }
 
         header {
@@ -49,55 +43,51 @@
         }
 
         header img {
-            max-width: 280px;
-            margin-bottom: 15px;
+            max-width: 260px;
+            margin-bottom: 10px;
         }
 
-        header h1 {
-            margin: 10px 0 5px;
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
             color: var(--primary);
-            font-size: 28px;
-        }
-
-        header p {
-            margin: 0;
-            color: #333;
-            font-size: 16px;
+            font-weight: bold;
         }
 
         section {
-            padding: 50px 20px;
             max-width: 1100px;
             margin: auto;
+            padding: 40px 20px;
         }
 
         h2 {
             color: var(--primary);
-            margin-bottom: 15px;
         }
 
         .card {
-            background: var(--white);
+            background: var(--card);
             padding: 30px;
-            margin-bottom: 30px;
             border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+            margin-bottom: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            animation: fadeUp 0.6s ease;
         }
 
-        ul {
-            padding-left: 20px;
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        ul li {
-            margin-bottom: 8px;
-        }
-
-        /* Image Gallery */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             gap: 15px;
-            margin-top: 20px;
         }
 
         .gallery img {
@@ -105,63 +95,41 @@
             height: 200px;
             object-fit: cover;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         footer {
-            background-color: #62620aba;
-            color: var(--primary);
             text-align: center;
             padding: 20px;
-            font-size: 14px;
+            background: #62620aba;
         }
 
-        /* WhatsApp Floating Button */
-        .whatsapp-button {
+        /* Dark Mode Button */
+        .toggle {
             position: fixed;
-            bottom: 20px;
+            top: 20px;
             right: 20px;
-            background-color: #25D366;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            transition: transform 0.3s;
-            z-index: 1000;
-        }
-
-        .whatsapp-button img {
-            width: 30px;
-            height: 30px;
-        }
-
-        .whatsapp-button:hover {
-            transform: scale(1.1);
-        }
-
-        /* Responsive */
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 22px;
-            }
-
-            section {
-                padding: 30px 15px;
-            }
+            padding: 8px 14px;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            z-index: 999;
         }
     </style>
 </head>
 
 <body>
 
+<button id="darkToggle" class="toggle">🌙 Dark Mode</button>
+
 <header>
-    <img src="logo.png" alt="HMC INTERNATIONAL WHOLESALE LLC Logo">
+    <img src="logo.png" alt="HMC Logo">
     <h1>HMC INTERNATIONAL WHOLESALE LLC</h1>
     <p>General Trading • Consulting • Brokerage Services</p>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 </header>
 
 <section>
@@ -170,50 +138,18 @@
         <h2>About Us</h2>
         <p>
             HMC INTERNATIONAL WHOLESALE LLC is a US-registered company providing
-            general trading, consulting, and brokerage services. We deliver reliable
-            business solutions to international clients with full compliance to US regulations.
-        </p>
-    </div>
-
-    <div class="card">
-        <h2>Company Information</h2>
-        <p><strong>Company Name:</strong> HMC INTERNATIONAL WHOLESALE LLC</p>
-        <p><strong>Address:</strong> 24 Inverness Ter, Fords, NJ 08863, USA</p>
-        <p><strong>Country:</strong> United States (New Jersey)</p>
-    </div>
-
-    <div class="card">
-        <h2>Our Services</h2>
-        <ul>
-            <li>General Trading</li>
-            <li>Business & Financial Consulting</li>
-            <li>Commercial Brokerage Services</li>
-            <li>International Facilitation Services</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h2>Payments</h2>
-        <p>
-            We accept payments via secure payment links provided by our banking partners.
-            All transactions are processed in USD in compliance with international standards.
+            general trading, consulting, and brokerage services with full compliance
+            to US regulations.
         </p>
     </div>
 
     <div class="card">
         <h2>Gallery</h2>
         <div class="gallery">
-            <img src="images/img1.jpg" alt="Business Image" loading="lazy">
-            <img src="images/img2.jpg" alt="Trading Services" loading="lazy">
-            <img src="images/img3.jpg" alt="Consulting Services" loading="lazy">
+            <img src="images/img1.jpg">
+            <img src="images/img2.jpg">
+            <img src="images/img3.jpg">
         </div>
-    </div>
-
-    <div class="card">
-        <h2>Contact Us</h2>
-        <p><strong>📍 Address:</strong> 24 Inverness Ter, Fords, NJ 08863, USA</p>
-        <p><strong>📞 Phone:</strong> <a href="tel:+19083201233">+1 908 320 1233</a></p>
-        <p><strong>✉️ Email:</strong> <a href="mailto:Hmc.llc@yahoo.com">Hmc.llc@yahoo.com</a></p>
     </div>
 
 </section>
@@ -222,9 +158,13 @@
     © 2026 HMC INTERNATIONAL WHOLESALE LLC – All Rights Reserved
 </footer>
 
-<a href="https://wa.me/19083201233" target="_blank" class="whatsapp-button">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-</a>
+<script>
+    const btn = document.getElementById("darkToggle");
+
+    btn.onclick = () => {
+        document.body.classList.toggle("dark");
+    };
+</script>
 
 </body>
 </html>
